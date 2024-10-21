@@ -12,6 +12,8 @@ public class Order {
 
     private Long id;
 
+    private int priceOrder;
+
     private List<Product> products;
 
     private Client client;
@@ -27,5 +29,11 @@ public class Order {
 
     public void addProduct(Product product) {
         products.add(product);
+    }
+
+    public void priceCalculation() {
+        for (Product product : products) {
+            priceOrder += product.getPrice();
+        }
     }
 }
