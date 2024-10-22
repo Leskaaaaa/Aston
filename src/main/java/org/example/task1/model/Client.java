@@ -18,18 +18,13 @@ public class Client {
 
     private List<Order> orders;
 
-    private boolean active;
+    private boolean isActive;
 
     public Client(String name, int balance) {
         this.id = countId++;
         this.name = name;
         this.orders = new ArrayList<>();
         this.balance = balance;
-        this.active = true;
+        this.isActive = true;
     }
-
-    public void addOrder(Order order) {
-        orders.add(order);
-    }
-
 }

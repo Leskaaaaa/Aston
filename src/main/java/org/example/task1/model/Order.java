@@ -29,9 +29,12 @@ public class Order {
 
     public void addProduct(Product product) {
         products.add(product);
+        priceCalculate();
     }
 
-    public void priceCalculation() {
+    private void priceCalculate() {
+        priceOrder = 0;
+
         for (Product product : products) {
             priceOrder += product.getPrice();
         }

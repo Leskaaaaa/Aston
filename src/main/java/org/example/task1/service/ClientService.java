@@ -16,8 +16,6 @@ public class ClientService {
                 order.addProduct(product);
             }
 
-            order.priceCalculation();
-
             System.out.println("Заказ №" + order.getId() + " создан");
             return order;
         }
