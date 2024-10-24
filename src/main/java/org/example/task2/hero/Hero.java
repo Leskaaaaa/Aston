@@ -5,14 +5,12 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class Hero {
+public abstract class Hero {
 
     private final String name;
+
     private final int damage;
 
-    public void attackEnemy(Enemy enemy) {
-        System.out.println(name + " атакует врага!");
-        enemy.takeDamage(damage);
-    }
+    public abstract void attackEnemy(Enemy enemy);
 
 }
