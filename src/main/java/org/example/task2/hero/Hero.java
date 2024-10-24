@@ -2,6 +2,7 @@ package org.example.task2.hero;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.example.task2.enemy.Enemy;
 
 @Getter
 @AllArgsConstructor

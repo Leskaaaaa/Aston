@@ -1,5 +1,6 @@
 package org.example.task2;
 
+import org.example.task2.enemy.Enemy;
 import org.example.task2.hero.*;
 
 public class TrainingGround {

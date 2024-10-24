@@ -1,5 +1,7 @@
 package org.example.task2.hero;
 
+import org.example.task2.enemy.Enemy;
+
 public class Archer extends Hero {
 
     private final String heroType = getClass().getSimpleName();
