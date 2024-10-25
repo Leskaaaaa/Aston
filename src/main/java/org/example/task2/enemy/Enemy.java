@@ -1,36 +1,23 @@
 package org.example.task2.enemy;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.example.task2.Mortal;
+import org.example.task2.hero.Hero;
 
 @Getter
-@Setter
-public class Enemy implements Mortal {
+public abstract class Enemy implements Mortal {
 
-    private int health;
+    protected int health;
 
-    private boolean isAlive;
+    protected int damage;
 
-    public Enemy(int health) {
+    public Enemy(int health, int damage) {
         this.health = health;
-        isAlive = true;
+        this.damage = damage;
     }
 
-    public void takeDamage(int damage) {
-        health -= damage;
-        if (isAlive()) {
-            System.out.println("У врага " + health + " здоровья");
-        } else {
-            System.out.println("Вражеский персонаж погиб");
-        }
-    }
+    public abstract void attackEnemy(Hero hero);
 
-    @Override
-    public boolean isAlive() {
-        if (health <= 0) {
-            isAlive = false;
-        }
-        return isAlive;
-    }
+    public abstract void takeDamage(int damage);
+
 }
