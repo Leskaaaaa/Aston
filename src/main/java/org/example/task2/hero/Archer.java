@@ -16,10 +16,11 @@ public class Archer extends Hero {
     @Override
     public void attackEnemy(Enemy enemy, int randomNumber) {
         if (randomNumber == 1) {
-            powerShot(enemy, randomNumber);
+            powerShot(enemy);
             return;
         }
-        System.out.println(HERO_TYPE + ": " + getName() + " атакует врага!");
+
+        System.out.println("==================== " + HERO_TYPE + ": " + getName() + " атакует врага базовой атакой!");
         enemy.takeDamage(damage);
     }
 
@@ -27,7 +28,7 @@ public class Archer extends Hero {
     public void takeDamage(int damage) {
         health -= damage;
         if (isAlive()) {
-            System.out.println("Текущее здоровье " + HERO_TYPE + " " + getName() + ", ровняеется " + health);
+            System.out.println("Текущее здоровье " + HERO_TYPE + " " + getName() + ", ровняеется " + health + "\n");
         } else {
             System.out.println("Ваш персонаж " + HERO_TYPE + " " + getName() + ", мертв!");
         }
@@ -41,9 +42,9 @@ public class Archer extends Hero {
         return isAlive;
     }
 
-    private void powerShot(Enemy enemy, int randomNumber) {
+    private void powerShot(Enemy enemy) {
         int spellDamage = damage * 2;
-        System.out.println(HERO_TYPE + getName() + " применил способность PowerShot");
+        System.out.println("==================== " + HERO_TYPE + " " + getName() + " атакует врага и применяет способность PowerShot");
         enemy.takeDamage(spellDamage);
     }
 }

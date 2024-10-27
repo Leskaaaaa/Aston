@@ -21,7 +21,7 @@ public class Zombie extends Enemy {
 
     @Override
     public void attackEnemy(Hero hero) {
-        System.out.println(ENEMY_TYPE + " атакует вашего персонажа!");
+        System.out.println("-------------------- " + ENEMY_TYPE + " атакует вашего персонажа!");
         hero.takeDamage(damage);
     }
 
@@ -29,7 +29,7 @@ public class Zombie extends Enemy {
     public void takeDamage(int damage) {
         health -= damage;
         if (!isAlive()) {
-            System.out.println("Враг " + ENEMY_TYPE + ", мертв!");
+            System.out.println("Враг " + ENEMY_TYPE + ", мертв!\n");
 
             if (random.nextBoolean()) {
                 reincarnation();
@@ -38,7 +38,7 @@ public class Zombie extends Enemy {
 
             return;
         }
-        System.out.println("Текущее здоровье врага " + ENEMY_TYPE + ", ровняеется " + health);
+        System.out.println("Текущее здоровье врага " + ENEMY_TYPE + ", ровняеется " + health + "\n");
     }
 
     @Override
