@@ -2,8 +2,6 @@ package org.example.task2.enemy;
 
 import org.example.task2.hero.Hero;
 
-import java.util.Random;
-
 public class Vampire extends Enemy {
 
     private final static String ENEMY_TYPE = Vampire.class.getSimpleName();

@@ -15,7 +15,7 @@ public abstract class Hero implements Mortal {
 
     protected final int damage;
 
-    public abstract void defaultAttackEnemy(Enemy enemy, int damage);
+    public abstract void attackEnemy(Enemy enemy, int damage);
 
     public abstract void takeDamage(int damage);
 

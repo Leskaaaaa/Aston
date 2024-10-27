@@ -14,7 +14,7 @@ public class Mage extends Hero {
     }
 
     @Override
-    public void defaultAttackEnemy(Enemy enemy, int randomDamage) {
+    public void attackEnemy(Enemy enemy, int randomDamage) {
         System.out.println(HERO_TYPE + ": " + getName() + " атакует врага!");
         enemy.takeDamage(damage);
     }

@@ -15,15 +15,17 @@ public class BattleGround {
         Random rand = new Random();
         Hero hero = new Archer("Ivan", 100, 21);
         Enemy zombie = new Zombie(100, 7);
-        Enemy vampire = new Vampire(100, 50);
+        Enemy vampire = new Vampire(45, 50);
 
         ArrayList<Enemy> enemies = new ArrayList<>(List.of(zombie, vampire));
 
         enemies.forEach(enemy -> {
-            while (enemy.isAlive()) {
-                hero.defaultAttackEnemy(enemy, rand.nextInt(3));
+            while (enemy.isAlive() && hero.isAlive()) {
+                hero.attackEnemy(enemy, rand.nextInt(3));
 
-                enemy.attackEnemy(hero);
+                if (enemy.isAlive()) {
+                    enemy.attackEnemy(hero);
+                }
             }
         });
     }

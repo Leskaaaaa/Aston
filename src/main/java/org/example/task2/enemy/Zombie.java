@@ -33,8 +33,6 @@ public class Zombie extends Enemy {
 
             if (random.nextBoolean()) {
                 reincarnation();
-                System.out.println(ENEMY_TYPE + " воскрес!!!");
-                health = HEALTH_AT_REINCARNATION;
                 return;
             }
 
@@ -53,5 +51,7 @@ public class Zombie extends Enemy {
 
     private void reincarnation() {
         isAlive = true;
+        System.out.println(ENEMY_TYPE + " воскрес!!!");
+        health = HEALTH_AT_REINCARNATION;
     }
 }
