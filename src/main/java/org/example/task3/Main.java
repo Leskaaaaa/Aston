@@ -14,6 +14,8 @@ public class Main {
 
         students.sort(Comparator.comparing(Student::getName));
 
+        MyCollections.sort(students);
+
         System.out.println(students);
     }
 }

@@ -123,7 +123,13 @@ public class MyArrayList<E> implements List<E> {
         while (!isSorted) {
             isSorted = true;
             for (int i = 1; i < size; i++) {
-                if (c.compare(get(i - 1), get(i)) > 0) {
+                int comparison;
+                if (c != null) {
+                    comparison = c.compare(get(i - 1), get(i));
+                } else {
+                    comparison = ((Comparable<? super E>) get(i - 1)).compareTo(get(i));
+                }
+                if (comparison > 0) {
                     Object temp = array[i];
                     array[i] = array[i - 1];
                     array[i - 1] = temp;
